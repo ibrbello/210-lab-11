@@ -27,7 +27,7 @@ void inputEmployee(Employee *);
 void displayEmployee(Employee *);
 
 int main() {
-    Employee *team = new Employee[NR_EMPLOYEES];
+    Employee *team = new Employee[NR_EMPLOYEES]; // Dynamic array to hold employees
     
     for (int i = 0; i < NR_EMPLOYEES; i++)
         inputEmployee(&team[i]);
@@ -53,7 +53,7 @@ void inputEmployee(Employee * eptr) {
         cin >> eptr->vacayDays[i];
     }
     cin.ignore();
-    cout << endl << endl;
+    cout << endl;
     nrEmp++;
 }
 
@@ -63,7 +63,7 @@ void displayEmployee(Employee * eptr) {
     cout << "Job Title: " << eptr->role << endl;
     cout << "Salary: " << eptr->salary << endl;
     for (int i = 0; i < NR_MONTHS; i++)
-        cout << "Grade #" << i + 1 << ": " 
+        cout << "Month #" << i + 1 << ": " 
              << eptr->vacayDays[i] << endl;
-    cout << endl << endl;
+    cout << endl;
 }
